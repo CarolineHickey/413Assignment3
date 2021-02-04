@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Joel Hilton Movies</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+
+</head>
+
+<body>
+    <header>
+        <menu>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li> <!--Tag helpers in the menu-->
+                <li><a asp-controller="Home" asp-action="MyPodcasts">Podcasts</a></li>
+                <li><a asp-controller="Home" asp-action="EnterMovies">Enter Movies</a></li>
+            </ul>
+        </menu>
+    </header>
+    <h1>@ViewBag.Title</h1>
+
+    @RenderBody()
+
+
+    <br />
+    <br />
+    <footer> Copyright 2021 Joel Hilton</footer>
+
+</body>
+
+</html>
