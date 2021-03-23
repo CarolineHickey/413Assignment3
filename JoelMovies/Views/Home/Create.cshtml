@@ -1,11 +1,8 @@
 @model JoelMovies.Models.ApplicationResponse
 
 @{ ViewBag.Title = "Recommend Movie";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
-
-
-<hr />
-<div class="row text-center">
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+    <hr />
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -52,11 +49,11 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
-</div>
 
-<div>
-    <a asp-action="List">Back to List</a>
-</div>
+    <div>
+        <a asp-action="List">Back to List</a>
+    </div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
