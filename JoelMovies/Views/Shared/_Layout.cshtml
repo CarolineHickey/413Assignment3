@@ -4,28 +4,48 @@
 <head>
     <title>Joel Hilton Movies</title>
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
-
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 
-<body>
+<body style="background-color: #f5f9ff">
+
     <header>
-        <menu>
-            <ul>
-                <li><a asp-controller="Home" asp-action="Index">Home</a></li> <!--Tag helpers in the menu-->
-                <li><a asp-controller="Home" asp-action="MyPodcasts">Podcasts</a></li>
-                <li><a asp-controller="Home" asp-action="EnterMovies">Enter Movies</a></li>
-            </ul>
-        </menu>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" style="background-color: #6e1913">
+            <div class="container">
+                <a class="navbar-brand"  style=" text-decoration-color: #ebdbca" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link light" style=" text-decoration-color: #ebdbca" asp-area="" asp-controller="Home" asp-action="MyPodcasts">My Podcasts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link light" style=" text-decoration-color: #ebdbca" asp-area="" asp-controller="Home" asp-action="Create">Add Movie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link light"  style=" text-decoration-color: #ebdbca" asp-area="" asp-controller="Home" asp-action="List">See List</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <h1>@ViewBag.Title</h1>
+    <div >
+        <div class="text-center">
+            <h1>@ViewBag.Title</h1>
+        </div>
+        <div class="text-center">
+            @RenderBody()
+        </div>
 
-    @RenderBody()
-
-
-    <br />
-    <br />
-    <footer> Copyright 2021 Joel Hilton</footer>
-
+        <br />
+        <br />
+        <footer class="text-center"> Copyright 2021 Joel Hilton</footer>
+    </div>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

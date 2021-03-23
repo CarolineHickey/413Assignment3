@@ -1,13 +1,31 @@
 ﻿@{
     ViewBag.Title = "The Joel Hilton Film Collection";
 }
+<div class="row">
+    <div class="col-8">
+        <br />
+        <img src="~/JoelHilton.jpg" width="800px" />
+    </div>
 
-<div>
     <br />
-    <img src="~/JoelHilton.jpg" width="800px" />
+    <br />
+    <div class="col-4">
+        <div>
+            <br /><br /><br /><br /><br /><br />
+        </div>
+
+        <div>
+            <a class="btn btn-danger" asp-action="Create">Click here to Add Movie</a>
+
+            <br />
+            <br />
+
+            <a class="btn btn-danger" asp-action="List">Movie List</a>
+
+            <br />
+            <br />
+
+            <a class="btn btn-danger" asp-action="MyPodcasts">Podcasts</a>
+        </div>
+    </div>
 </div>
-
-<br />
-<br />
-
-<a asp-action="EnterMovies">Click here to Add Movie</a>

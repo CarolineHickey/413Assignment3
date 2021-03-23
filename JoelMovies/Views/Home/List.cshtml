@@ -1,0 +1,87 @@
+@model IEnumerable<JoelMovies.Models.ApplicationResponse>
+
+@{
+    ViewBag.Title = "Movie List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="list-group textt-center">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Director)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edited)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LentTo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="list-group textt-center">
+            @foreach (var item in Model)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Year)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Director)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rating)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Edited)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LentTo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Notes)
+    </td>
+    <td>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+    </td>
+</tr>            }
+
+        </tbody>
+    </table>
+    <br /><br /><br /><br />
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </p>
+</body>
+</html>

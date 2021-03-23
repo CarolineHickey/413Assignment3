@@ -11,6 +11,8 @@ namespace JoelMovies.Models
     public class ApplicationResponse
     {
         //public ApplicationResponse()
+        [Key]
+        public int MovieId { get; set; }
 
         [Required]
         public string Category { get; set; }
@@ -19,7 +21,7 @@ namespace JoelMovies.Models
         public string Title { get; set; }
 
         [Required]
-        public string Year { get; set; } 
+        public int Year { get; set; } 
 
         [Required]
         public string Director { get; set; }
@@ -28,7 +30,7 @@ namespace JoelMovies.Models
         public string Rating { get; set; }
 
         
-        public string Edited { get; set; }
+        public bool Edited { get; set; }
 
 
         public string LentTo { get; set; }
